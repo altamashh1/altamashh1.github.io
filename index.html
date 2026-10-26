@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md Altamash Husain · Full Stack Developer</title>
+<meta name="description" content="Portfolio of Md Altamash Husain, a full stack developer and data science enthusiast based in Delhi, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fa; --surface:#fff; --ink:#0e1a2b; --muted:#566275; --line:#e1e6ed;
+  --accent:#2f4bd8; --accent-ink:#fff; --empty:#e8ecf1;
+  --gh0:#bfe7c8; --gh1:#7cc98f; --gh2:#3da35d; --gh3:#1b7a3e;
+  --lc0:#ffe0b0; --lc1:#ffc266; --lc2:#ff9f1a; --lc3:#d9780a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:72px 0 8px}
+h2{font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
+.lede{color:var(--muted);margin:0 0 28px;max-width:60ch}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(245,247,250,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .brand{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14.5px}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 24px;display:grid;grid-template-columns:1fr 240px;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,68px);line-height:1.02;letter-spacing:-.035em;margin:0 0 16px;font-weight:800}
+.role{font-size:20px;font-weight:500;margin:0 0 16px}
+.hero p.sum{color:var(--muted);font-size:17px;max-width:56ch;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{border-color:var(--ink)}
+.btn.primary:hover{filter:brightness(1.1)}
+.avatar{width:240px;height:240px;border-radius:20px;object-fit:cover;border:1px solid var(--line);background:var(--surface)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--muted);font-size:14.5px;margin-top:24px}
+
+/* heatmaps (the one showpiece) */
+.heat-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:20px}
+.heat-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;margin-bottom:14px}
+.heat-title{font-weight:700}
+.heat-title small{font-weight:500;color:var(--muted);margin-left:8px}
+.heat-meta{font-size:13.5px;color:var(--muted)}
+.heat-meta b{color:var(--ink)}
+.heat-scroll{overflow-x:auto;padding-bottom:6px}
+.months,.grid{display:grid;grid-auto-flow:column;gap:3px;width:max-content}
+.months{grid-auto-columns:12px;font-size:11px;color:var(--muted);height:15px;margin-bottom:4px}
+.months span{white-space:nowrap}
+.grid{grid-template-rows:repeat(7,12px);grid-auto-columns:12px}
+.cell{width:12px;height:12px;border-radius:3px;background:var(--empty)}
+[data-t=gh] .cell[data-l="1"]{background:var(--gh0)}[data-t=gh] .cell[data-l="2"]{background:var(--gh1)}
+[data-t=gh] .cell[data-l="3"]{background:var(--gh2)}[data-t=gh] .cell[data-l="4"]{background:var(--gh3)}
+[data-t=lc] .cell[data-l="1"]{background:var(--lc0)}[data-t=lc] .cell[data-l="2"]{background:var(--lc1)}
+[data-t=lc] .cell[data-l="3"]{background:var(--lc2)}[data-t=lc] .cell[data-l="4"]{background:var(--lc3)}
+.status{color:var(--muted);font-size:14px;padding:8px 0}
+
+/* projects */
+.projects{display:grid;gap:20px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 28px}
+.project h3{margin:0 0 4px;font-size:21px;letter-spacing:-.01em}
+.stack{color:var(--accent);font-weight:600;font-size:14.5px;margin:0 0 14px}
+.project ul{margin:0 0 18px;padding-left:20px;color:#2a3648}
+.project li{margin-bottom:8px}
+.project .links a{font-weight:600;font-size:14.5px;margin-right:18px}
+.more{margin-top:18px;color:var(--muted)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 24px}
+.skill h3{margin:0 0 12px;font-size:15px;color:var(--muted);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{border:1px solid var(--line);background:var(--bg);padding:4px 12px;border-radius:999px;font-size:14px}
+
+/* education */
+.two{display:grid;grid-template-columns:3fr 2fr;gap:20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 28px}
+.panel h3{margin:0 0 16px;font-size:18px}
+.entry{margin-bottom:18px}.entry:last-child{margin-bottom:0}
+.entry b{display:block}.entry span{color:var(--muted);font-size:14.5px}
+.panel ul{margin:0;padding-left:18px}.panel li{margin-bottom:10px}
+
+/* contact */
+.contact{margin:72px 0 0;padding:56px 0;border-top:1px solid var(--line)}
+.contact h2{font-size:34px}
+footer{padding:0 0 40px;color:var(--muted);font-size:14px}
+
+@media(max-width:780px){
+  .hero{grid-template-columns:1fr;gap:28px}.avatar{width:120px;height:120px;order:-1}
+  .skills,.two{grid-template-columns:1fr}
+  nav ul{gap:14px;font-size:13.5px}
+  section{padding-top:56px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Md Altamash Husain</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#activity">Activity</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top" class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1>Md Altamash Husain</h1>
+      <p class="role">Full Stack Developer · Data Science Enthusiast</p>
+      <p class="sum">I build responsive web applications with React and Node.js, and work with Python for computer vision and data analysis. I'm looking for an entry-level full stack or data science role where I can ship reliable, scalable products that deliver measurable value to users.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:altamash9794@gmail.com">Email me</a>
+        <a class="btn" href="https://github.com/altamashh1" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/altamashmd/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="facts"><span>Delhi, India</span><span>B.Tech CSE (Data Science), 2026</span></div>
+    </div>
+    <img class="avatar" src="https://avatars.githubusercontent.com/u/74734748?v=4" alt="Portrait of Md Altamash Husain">
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="lede">Two production-style applications that combine a full stack back end with LLMs.</p>
+    <div class="projects">
+      <article class="project">
+        <h3>The Green Room: AI mock interview app</h3>
+        <p class="stack">Node.js · Express · SQL (libSQL/Turso)</p>
+        <ul>
+          <li>Deployed a full stack app for adaptive, voice-based mock interviews across 7 job roles and 4 experience levels. Spoken answers are transcribed in the browser and an LLM generates each follow-up question in real time.</li>
+          <li>Built a REST API with JWT authentication, bcrypt-hashed passwords, per-IP rate limiting and server-side validation of every model response.</li>
+          <li>Designed the SQL schema for accounts, transcripts and AI-scored feedback, plus an admin analytics dashboard and a model-fallback chain that keeps sessions running through provider rate limits.</li>
+        </ul>
+        <div class="links"><a href="https://github.com/altamashh1/The-Green-Room" target="_blank" rel="noopener">View source on GitHub</a></div>
+      </article>
+      <article class="project">
+        <h3>Dialect: LLM-powered data analysis</h3>
+        <p class="stack">Python · FastAPI · Pandas · PostgreSQL</p>
+        <ul>
+          <li>Turns plain-English questions about an uploaded CSV, Excel or JSON file into pandas code, runs it in an isolated subprocess, and feeds errors back to the LLM to self-correct within 3 attempts.</li>
+          <li>Engineered a three-layer sandbox for untrusted generated code (AST validator, restricted namespace, OS-level memory and timeout limits), hardened against 24 tested escape techniques.</li>
+          <li>Added JWT authentication, per-user PostgreSQL persistence, pluggable local, database and S3 storage, LLM-critic answer verification and a live cost and latency dashboard, covered by 145 pytest tests.</li>
+        </ul>
+        <div class="links"><a href="https://github.com/altamashh1/Dialect" target="_blank" rel="noopener">View source on GitHub</a></div>
+      </article>
+    </div>
+    <p class="more">More work, including the Employee Performance Predictor, is on <a href="https://github.com/altamashh1?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
+  </section>
+
+  <section id="activity">
+    <h2>Activity</h2>
+    <p class="lede">Daily code and problem-solving, pulled live from GitHub and LeetCode.</p>
+
+    <div class="heat-card" id="gh" data-t="gh">
+      <div class="heat-head"><div class="heat-title">GitHub<small>contributions in the past year</small></div><div class="heat-meta"></div></div>
+      <div class="status">Loading…</div>
+      <div class="heat-scroll" hidden><div class="months"></div><div class="grid"></div></div>
+    </div>
+
+    <div class="heat-card" id="lc" data-t="lc">
+      <div class="heat-head"><div class="heat-title">LeetCode<small>submissions in the past year</small></div><div class="heat-meta"></div></div>
+      <div class="status">Loading…</div>
+      <div class="heat-scroll" hidden><div class="months"></div><div class="grid"></div></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="lede">Tools I use to build and ship.</p>
+    <div class="skills">
+      <div class="skill"><h3>Languages</h3><div class="tags"><span>Python</span><span>JavaScript</span><span>C</span><span>C++</span><span>Java</span></div></div>
+      <div class="skill"><h3>Full stack development</h3><div class="tags"><span>React.js</span><span>Node.js</span><span>Express</span><span>REST APIs</span><span>HTML</span><span>CSS</span></div></div>
+      <div class="skill"><h3>Data science and machine learning</h3><div class="tags"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>scikit-learn</span><span>TensorFlow</span><span>OpenCV</span></div></div>
+      <div class="skill"><h3>Databases and tools</h3><div class="tags"><span>MySQL</span><span>PostgreSQL</span><span>Oracle SQL</span><span>Git</span><span>GitHub</span><span>Linux</span><span>VS Code</span></div></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education and certifications</h2>
+    <p class="lede">&nbsp;</p>
+    <div class="two">
+      <div class="panel">
+        <h3>Education</h3>
+        <div class="entry"><b>B.Tech, Computer Science and Engineering (Data Science)</b><span>Galgotias College of Engineering and Technology, Greater Noida · 2022 to 2026</span><br><span>Coursework: Data Science, Data Analytics, Design and Analysis of Algorithms</span></div>
+        <div class="entry"><b>Indian School Certificate (Class XII)</b><span>Little Flower School, Gorakhpur · 2019 to 2021</span></div>
+      </div>
+      <div class="panel">
+        <h3>Certifications</h3>
+        <ul>
+          <li>AI/ML Virtual Internship, Smart Internz (Jun to Aug 2025)</li>
+          <li>Data Structures and Algorithms, Abdul Bari (Udemy)</li>
+          <li>Web Services APIs and Web Development, Angela Yu (Udemy)</li>
+          <li>Database Programming Using SQL, Oracle (Infosys)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let's work together</h2>
+    <p class="lede">I'm open to entry-level full stack and data science roles. The fastest way to reach me is email.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:altamash9794@gmail.com">altamash9794@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/altamashmd/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Md Altamash Husain</div></footer>
+
+<script>
+/* ====== CONFIG ====== */
+var GITHUB_USER = "altamashh1";
+var LEETCODE_USER = "YOUR_LEETCODE_USERNAME"; // <- put your LeetCode username here
+/* ==================== */
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], DAY = 864e5;
+var key = function (d) { return d.toISOString().slice(0, 10); };
+
+// counts: { "YYYY-MM-DD": n }, bands: upper bounds for levels 1-3 (level 4 is above)
+function heatmap(id, counts, bands, noun) {
+  var card = document.getElementById(id), grid = card.querySelector(".grid"),
+      months = card.querySelector(".months");
+  var lvl = function (n) { return !n ? 0 : n <= bands[0] ? 1 : n <= bands[1] ? 2 : n <= bands[2] ? 3 : 4; };
+  var now = new Date(), today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  var start = new Date(today - 364 * DAY); start = new Date(start - start.getUTCDay() * DAY);
+  var total = 0, active = 0, run = 0, best = 0, lastM = -1, col = 0;
+
+  for (var t = +start; t <= +today; t += DAY) {
+    var d = new Date(t), c = counts[key(d)] || 0, cell = document.createElement("div");
+    cell.className = "cell"; cell.dataset.l = lvl(c);
+    cell.title = c + " " + noun + (c === 1 ? "" : "s") + " on " + d.toUTCString().slice(5, 16);
+    grid.appendChild(cell);
+    total += c;
+    if (c) { active++; run++; best = Math.max(best, run); } else run = 0;
+    if (d.getUTCDay() === 0) {
+      col++;
+      if (d.getUTCMonth() !== lastM) {
+        var s = document.createElement("span"); s.textContent = MONTHS[d.getUTCMonth()];
+        s.style.gridColumn = col + " / span 3"; months.appendChild(s); lastM = d.getUTCMonth();
+      }
+    }
+  }
+  card.querySelector(".heat-meta").innerHTML =
+    "<b>" + total.toLocaleString() + "</b> total · Active days <b>" + active + "</b> · Longest streak <b>" + best + "</b>";
+  card.querySelector(".status").hidden = true;
+  var sc = card.querySelector(".heat-scroll"); sc.hidden = false; sc.scrollLeft = sc.scrollWidth;
+}
+
+function fail(id, msg) {
+  var el = document.querySelector("#" + id + " .status"); el.textContent = msg;
+}
+
+// GitHub
+fetch("https://github-contributions-api.jogruber.de/v4/" + GITHUB_USER + "?y=last")
+  .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+  .then(function (j) {
+    var m = {}; j.contributions.forEach(function (c) { m[c.date] = c.count; });
+    heatmap("gh", m, [2, 5, 9], "contribution");
+  })
+  .catch(function () { fail("gh", "GitHub activity couldn't be loaded right now."); });
+
+// LeetCode
+if (LEETCODE_USER === "YOUR_LEETCODE_USERNAME") {
+  fail("lc", "Add your LeetCode username in the CONFIG block at the bottom of this file.");
+} else {
+  fetch("https://alfa-leetcode-api.onrender.com/" + encodeURIComponent(LEETCODE_USER) + "/calendar")
+    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function (j) {
+      var cal = typeof j.submissionCalendar === "string" ? JSON.parse(j.submissionCalendar) : (j.submissionCalendar || {}), m = {};
+      Object.keys(cal).forEach(function (ts) { m[key(new Date(ts * 1000))] = cal[ts]; });
+      heatmap("lc", m, [1, 3, 5], "submission");
+    })
+    .catch(function () { fail("lc", "LeetCode activity couldn't be loaded right now."); });
+}
+</script>
+</body>
+</html>
